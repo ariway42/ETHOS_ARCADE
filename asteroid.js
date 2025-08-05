@@ -307,7 +307,7 @@ function endGame() {
     asteroids = [];
     bullets = [];
 
-    if (score > 180) {
+    if (score > 130) {
         document.getElementById('codeReveal').style.display = 'block';
         const randomCode = Math.random().toString(36).substring(2, 10).toUpperCase();
         document.getElementById('secretCode').innerText = `Code: ${randomCode}`;
