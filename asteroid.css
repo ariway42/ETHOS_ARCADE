@@ -143,7 +143,7 @@ body {
     height: 125px; /* Dulu 30px */
     bottom: 10px;
     left: 215px; /* Dikurangin biar tetap di tengah */
-    background: url('img/ETHOS.png') no-repeat center/contain;
+    background: url('img/ethos.png') no-repeat center/contain;
 }
 
 .bullet {

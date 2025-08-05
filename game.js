@@ -200,7 +200,7 @@ function spawnEthosDecoration() {
 
     const ethos = document.createElement("div");
     ethos.classList.add("decoration", "ethos-img");
-    ethos.style.backgroundImage = "url('img/ETHOS.png')";
+    ethos.style.backgroundImage = "url('img/ethos.png')";
 
     const lane = Math.floor(Math.random() * laneCount);
     ethos.style.left = getLaneLeftPercent(lane);
