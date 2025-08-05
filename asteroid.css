@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: #e0dcdc;*/
+    background-color: #98acf4;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#controller {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+    z-index: 1000;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+    background: blue;
+    position: absolute;
+    border-radius: 6px;
+    touch-action: none;
+}
+
+    .arrow.up {
+        top: 0;
+        left: 40px;
+    }
+
+    .arrow.down {
+        bottom: 0;
+        left: 40px;
+    }
+
+    .arrow.left {
+        top: 40px;
+        left: 0;
+    }
+
+    .arrow.right {
+        top: 40px;
+        right: 0;
+    }
+
+@media (min-width: 768px) {
+    #controller {
+        display: none;
+    }
+}
+
+
+@keyframes roadMove {
+    0% {
+        background-position-y: 0;
+    }
+
+    100% {
+        background-position-y: 60px;
+    }
+}
+
+#gameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hud {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#gameOverScreen, #codeReveal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.8);
+    padding: 20px;
+    border: 2px solid white;
+    text-align: center;
+    z-index: 1000;
+}
+
+    #gameOverScreen button, #codeReveal button{
+        margin: 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+#startBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-size: 1rem;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: center;
+    z-index: 1000;
+}
+
+
+
+#gameArea {
+    width: 90vw;
+    max-width: 500px;
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #2e2e2e;
+    border-radius: 12px;
+    background: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"> <circle cx="10" cy="10" r="1" fill="white"/> <circle cx="50" cy="20" r="1" fill="white"/> <circle cx="70" cy="80" r="1" fill="white"/> <circle cx="30" cy="60" r="1" fill="white"/> </svg>') repeat; background-color: #000;
+    animation: starScroll 20s linear infinite;
+}
+
+
+
+.ship {
+    position: absolute;
+    width: 160px; /* Dulu 50px */
+    height: 125px; /* Dulu 30px */
+    bottom: 10px;
+    left: 215px; /* Dikurangin biar tetap di tengah */
+    background: url('img/ETHOS.png') no-repeat center/contain;
+}
+
+.bullet {
+    position: absolute;
+    width: 10px; /* Dulu 6px */
+    height: 20px; /* Dulu 12px */
+    background: #3498db;
+}
+
+.asteroid {
+    position: absolute;
+    width: 60px; /* Dulu 40px */
+    height: 60px;
+    background: url('img/asteroid.png') no-repeat center/contain;
+}
+
+.phrase {
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    animation: fadeUp 1s ease-out;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes starScroll {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 0 1000px;
+    }
+}

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asteroid Shooter</title>
+    <link rel="stylesheet" href="asteroid.css" />
+</head>
+<body>
+    <div id="gameContainer">
+        <!--<div class="hud">
+            <div id="score">Score: 0</div>
+        </div>-->
+
+        <div id="gameArea">
+            <div class="ship" id="player"></div>
+            <div style="color:azure;" id="score">Score: 0</div>
+        </div>
+    </div>
+
+    <div id="gameOverScreen" style="display: none;">
+        <h2 style="color: white;">Game Over</h2>
+        <p id="finalScore" style="color: white;"></p>
+        <button onclick="restartGame()">New Game</button>
+        <button onclick="goHome()">Home</button>
+    </div>
+
+    <div id="codeReveal" style="display: none;">
+        <h2 style="color: #0f0;">YOU WON! Some $AIR</h2>
+        <br />
+        <p id="secretCode" style="font-size: 24px; color: cyan;"></p>
+        <button onclick="restartGame()">Play Again</button>
+        <button onclick="goHome()">Home</button>
+    </div>
+
+    <div id="controller">
+        <div class="arrow up" data-dir="up"></div>
+        <div class="arrow down" data-dir="down"></div>
+        <div class="arrow left" data-dir="left"></div>
+        <div class="arrow right" data-dir="right"></div>
+    </div>
+
+    <button id="startBtn">Start Game</button>
+    <audio id="bgMusic" src="img/asteroidbg.mp3" preload="auto" loop></audio>
+
+    <script src="asteroid.js"></script>
+</body>
+</html>

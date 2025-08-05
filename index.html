@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETH OS ARCADE</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+
+    <div id="intro-section" class="center-content">
+        <div class="logo">
+            <img src="img/ETHOS.png" alt="ETHOS Logo" />
+        </div>
+
+        <div class="text">Welcome to Ethereum OS <br /> "Arcade Game"</div>
+    </div>
+
+    <div class="start-game-wrapper">
+        <div class="button-group">
+            <button id="start-game-btn">
+                <i class="fas fa-car"></i>
+            </button>
+            <div id="gamelabel" class="start-game-label">Car Game</div>
+        </div>
+
+        <div class="button-group">
+            <button id="myx">
+                <i class="fas fa-x"></i>
+            </button>
+            <div id="xlabel" class="myx-label">My X</div>
+        </div>
+
+        <div class="button-group">
+            <button id="asteroid-game">
+                <i class="fas fa-plane"></i>
+            </button>
+            <div id="asteroidlabel" class="asteroid-label">Asteroid</div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Game -->
+    <div id="game" class="hidden">
+        <div id="player"></div>
+        <div id="score">Score: 0</div>
+    </div>
+
+    <div id="game-over" class="hidden">
+        <div id="game-over-content">
+            <h2>💥 Game Over</h2>
+            <h3 id="congrats-message" style="display: none; color: gold;">🎉 Congratulations!</h3>
+            <p id="final-score"></p>
+            <button id="new-game-btn">New Game</button>
+            <br />
+            <button id="home-btn">Home</button>
+        </div>
+    </div>
+
+    <div id="controller">
+        <div class="arrow up" data-dir="up"></div>
+        <div class="arrow down" data-dir="down"></div>
+        <div class="arrow left" data-dir="left"></div>
+        <div class="arrow right" data-dir="right"></div>
+    </div>
+    <!--<audio id="background-music" src="img/backsound.mp3" loop></audio>-->
+
+    <script src="game.js"></script>
+
+    <script>
+        document.getElementById('myx').addEventListener('click', function () {
+            window.open('https://x.com/naomihub09', '_blank');
+        });
+    </script>
+
+    <script>
+        document.getElementById("asteroid-game").addEventListener("click", () => {
+            window.location.href = "asteroid.html";
+        });
+    </script>
+
+    <script>
+        const startBtn = document.getElementById("start-game-btn");
+        startBtn.addEventListener("click", () => {
+            startBtn.style.display = "none";
+            document.getElementById("intro-section").style.display = "none";
+            document.getElementById("gamelabel").style.display = "none";
+            document.getElementById("xlabel").style.display = "none";
+            document.getElementById("myx").style.display = "none";
+            document.getElementById("asteroidlabel").style.display = "none";
+            document.getElementById("asteroid-game").style.display = "none";
+            document.getElementById("game").classList.remove("hidden");
+            document.getElementById("controller").classList.remove("hidden");
+        });
+    </script>
+</body>
+
+</html>

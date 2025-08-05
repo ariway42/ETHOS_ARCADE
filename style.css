@@ -1,0 +1,445 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #98acf4;
+    font-family: sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px rgba(152, 172, 244, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+   
+    animation: glow 2s ease-in-out infinite alternate;
+    transform: translateY(-20px);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 2;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+
+    /* Rainbow background disamakan */
+    .logo::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        z-index: 0;
+        background: linear-gradient(45deg, #ffffff, #98acf4, #ffffff);
+        background-size: 400% 400%;
+        animation: rainbowMove 12s ease infinite;
+        opacity: 0.4;
+        pointer-events: none;
+    }
+
+    /* Translucent overlay */
+    .logo::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 20px;
+        z-index: 1;
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(152, 172, 244, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(152, 172, 244, 0.5), 0 0 60px rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Sama seperti tombol */
+@keyframes rainbowMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.text {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #000000; /* hitam */
+    text-shadow: 0 0 6px #ffffff, 0 0 12px #ffffff, 0 0 20px #ffffff;
+    animation: floatText 3s ease-in-out infinite;
+}
+
+/* Animasi melayang pelan */
+@keyframes floatText {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+
+.start-game-wrapper {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px; /* jarak antar button */
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 9999;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#start-game-btn,
+#myx,
+#asteroid-game {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: 0px solid #98acf4;
+    border-radius: 8px;
+    color: #111;
+    background: linear-gradient(45deg, #ffffff, #98acf4, #ffffff);
+    background-size: 400% 400%;
+    animation: rainbowMove 12s ease infinite, glow 2s ease-in-out infinite alternate;
+    transition: transform 0.2s ease;
+}
+
+
+    /* Hover effect (optional) */
+    #start-game-btn:hover,
+    #myx:hover,
+    #asteroid-game:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(152, 172, 244, 0.6), 0 0 20px rgba(152, 172, 244, 0.8);
+    }
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(152, 172, 244, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(152, 172, 244, 0.5), 0 0 60px rgba(255, 255, 255, 0.8);
+    }
+}
+
+
+/* Rainbow movement animation */
+@keyframes rainbowMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.start-game-label {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.myx-label {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.asteroid-label {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+    #start-game-btn:hover {
+        border-color: #bdc3c7;
+    }
+
+#myx:hover {
+    border-color: #bdc3c7;
+}
+
+#asteroid-game:hover {
+    border-color: #bdc3c7;
+}
+
+
+/* Buat class .hidden untuk menyembunyikan elemen */
+.hidden {
+    display: none;
+}
+
+
+#game {
+    width: 90vw;
+    max-width: 500px;
+    height: 80vh;
+    background: #111;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #2e2e2e;
+    border-radius: 12px;
+    background: repeating-linear-gradient( to bottom, #2e2e2e 0px, #2e2e2e 30px, #3a3a3a 30px, #3a3a3a 60px ), linear-gradient(to bottom, #111, #111);
+    background-size: 100% 60px;
+    animation: roadMove 1s linear infinite;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+#player {
+    width: 14%;
+    aspect-ratio: 1/2;
+    background-image: url('img/players.png');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    bottom: 10px;
+    left: 43%;
+    transition: left 0.1s;
+}
+
+.enemy {
+    width: 14%;
+    aspect-ratio: 1/2;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: -100px;
+    transition: top 0.3s ease-out;
+}
+
+
+
+#game-over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 12px;
+}
+
+    #game-over.hidden {
+        display: none;
+    }
+
+#game-over-content {
+    text-align: center;
+}
+
+#new-game-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    #new-game-btn:hover {
+        background: #ddd;
+    }
+
+
+#home-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+    #home-btn:hover {
+        background: #ddd;
+    }
+
+
+.decoration {
+    position: absolute;
+    width: 10%; /* atau sesuaikan */
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-position: center;
+    top: -100px; /* mulai dari luar layar */
+    z-index: 1; /* biar di belakang player/enemy */
+    pointer-events: none; /* biar gak ganggu klik/touch */
+    opacity: 0.7; /* biar gak terlalu terang */
+}
+
+.ethos-img {
+    width: 15%; /* Atur ukuran lebar sesuai keinginan */
+    aspect-ratio: 1/1; /* Biar bentuknya proporsional */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: -100px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+#controller {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+    z-index: 1000;
+}
+
+.arrow {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    border-radius: 6px;
+    touch-action: none;
+}
+
+    .arrow.up {
+        top: 0;
+        left: 40px;
+    }
+
+    .arrow.down {
+        bottom: 0;
+        left: 40px;
+    }
+
+    .arrow.left {
+        top: 40px;
+        left: 0;
+    }
+
+    .arrow.right {
+        top: 40px;
+        right: 0;
+    }
+
+@media (min-width: 768px) {
+    #controller {
+        display: none;
+    }
+}
+
+
+@keyframes roadMove {
+    0% {
+        background-position-y: 0;
+    }
+
+    100% {
+        background-position-y: 60px;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    #player,
+    .enemy {
+        width: 11%;
+    }
+
+    #player {
+        left: 44.5%;
+    }
+}
