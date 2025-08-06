@@ -147,7 +147,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 40px; /* jarak antar button */
+    gap: 35px; /* jarak antar button */
     justify-content: center;
     align-items: flex-start;
     z-index: 9999;
@@ -161,7 +161,7 @@ body {
 
 #start-game-btn,
 #myx,
-#asteroid-game {
+#asteroid-game, #adm-smt {
     padding: 12px 24px;
     font-size: 1.2rem;
     cursor: pointer;
@@ -178,7 +178,7 @@ body {
     /* Hover effect (optional) */
     #start-game-btn:hover,
     #myx:hover,
-    #asteroid-game:hover {
+    #asteroid-game:hover, #adm-smt:hover {
         transform: scale(1.05);
         box-shadow: 0 0 10px rgba(152, 172, 244, 0.6), 0 0 20px rgba(152, 172, 244, 0.8);
     }
@@ -228,6 +228,12 @@ body {
     color: #333;
 }
 
+.smt-label {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
     #start-game-btn:hover {
         border-color: #bdc3c7;
     }
@@ -237,6 +243,10 @@ body {
 }
 
 #asteroid-game:hover {
+    border-color: #bdc3c7;
+}
+
+#adm-smt:hover {
     border-color: #bdc3c7;
 }
 

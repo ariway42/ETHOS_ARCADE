@@ -26,6 +26,7 @@
             <div id="gamelabel" class="start-game-label">Car Game</div>
         </div>
 
+
         <div class="button-group">
             <button id="myx">
                 <i class="fas fa-x"></i>
@@ -38,6 +39,13 @@
                 <i class="fas fa-plane"></i>
             </button>
             <div id="asteroidlabel" class="asteroid-label">Asteroid</div>
+        </div>
+
+        <div class="button-group">
+            <button id="adm-smt">
+                <i class="fas fa-user"></i>
+            </button>
+            <div id="smtlabel" class="smt-label" style="text-align:center;">OS Simulator</div>
         </div>
 
     </div>
@@ -84,6 +92,12 @@
     </script>
 
     <script>
+        document.getElementById("adm-smt").addEventListener("click", () => {
+            window.location.href = "admsimulator.html";
+        });
+    </script>
+
+    <script>
         const startBtn = document.getElementById("start-game-btn");
         startBtn.addEventListener("click", () => {
             startBtn.style.display = "none";
@@ -93,6 +107,8 @@
             document.getElementById("myx").style.display = "none";
             document.getElementById("asteroidlabel").style.display = "none";
             document.getElementById("asteroid-game").style.display = "none";
+            document.getElementById("smtlabel").style.display = "none";
+            document.getElementById("adm-smt").style.display = "none";
             document.getElementById("game").classList.remove("hidden");
             document.getElementById("controller").classList.remove("hidden");
         });

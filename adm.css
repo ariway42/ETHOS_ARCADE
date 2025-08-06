@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #98acf4;
+    color: #fff;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+}
+
+
+.dashboard {
+    max-width: 700px;
+    margin: auto;
+    background-color: #e0dcdc;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.2);
+}
+
+.dashboard-image {
+    display: block;
+    margin: 0 auto 20px auto; /* Tengahin dan beri jarak bawah */
+    max-width: 120px;
+    height: auto;
+    border-radius: 12px; /* opsional: kasih sudut rounded */
+}
+
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #00ffc8;
+    letter-spacing: 1px;
+}
+
+.post {
+    background-color: #576574;
+    border: 0px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+    transition: all 0.5s ease;
+}
+
+.content {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.bonk-btn {
+    background-color: #d63031;
+    color: #fff;
+}
+
+.code-btn {
+    background-color: #1abc9c;
+    color: #fff;
+}
+
+.fade-out {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.give-code {
+    border: 2px solid #00ff90;
+    animation: bounce 0.4s ease;
+    box-shadow: 0 0 10px #00ff90;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .dashboard {
+        padding: 20px;
+    }
+
+    .post {
+        padding: 15px;
+    }
+
+    .content {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .user-info {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .username {
+        font-size: 13px;
+    }
+
+    .avatar {
+        width: 28px;
+        height: 28px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+}
