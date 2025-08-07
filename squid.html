@@ -63,7 +63,26 @@
             <button onclick="simulateKey('ArrowRight')">➡️</button>
         </div>
     </div>
+    <audio id="bgm" src="img/squidbgm.mp3" loop></audio>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const bgm = document.getElementById('bgm');
+            let isMusicPlaying = false;
+
+            document.addEventListener('keydown', function (e) {
+                const key = e.key.toLowerCase();
+                if (['w', 'a', 's', 'd'].includes(key) && !isMusicPlaying) {
+                    bgm.play().then(() => {
+                        isMusicPlaying = true;
+                        console.log('Music started');
+                    }).catch((error) => {
+                        console.warn('Autoplay blocked or error playing music:', error);
+                    });
+                }
+            });
+        });
+    </script>
 
     <script src="squid.js"></script>
 

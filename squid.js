@@ -3,7 +3,7 @@ const bots = [];
 for (let i = 1; i <= 17; i++) {
     bots.push(document.getElementById(`bot${i}`));
 }
-
+const bgms = document.getElementById("bgm");
 const doll = document.getElementById("doll");
 const message = document.getElementById("message");
 
@@ -56,7 +56,7 @@ function startRandomDollLoop() {
             doll.style.width = "100px";
         }
 
-        const delay = Math.random() * 2000 + 1000;
+        const delay = Math.random() * 3000 + 2000;
         setTimeout(toggle, delay);
     }
 
@@ -195,6 +195,8 @@ function checkGameFinish() {
 
         // Tampilkan kotak finish
         document.getElementById("finishBox").style.display = "block";
+
+        bgms.pause();
     }
 }
 
