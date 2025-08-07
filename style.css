@@ -140,15 +140,29 @@ body {
 }
 
 
-
 .start-game-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    min-width: max-content;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto; /* supaya button tidak mengecil */
+}
+
+
+/*.start-game-wrapper {
     position: fixed;
     bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 35px; /* jarak antar button */
-    justify-content: center;
+    gap: 35px;*/ /* jarak antar button */
+    /*justify-content: center;
     align-items: flex-start;
     z-index: 9999;
 }
@@ -157,11 +171,47 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}*/
+
+@media (max-width: 768px) {
+    .start-game-wrapper-scroll {
+        position: fixed;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        padding: 0 16px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        z-index: 9999;
+        display: flex;
+        gap: 12px;
+        /* Sembunyikan scrollbar */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+    }
+
+
+        .start-game-wrapper-scroll::-webkit-scrollbar {
+            display: none; /* Safari dan Chrome */
+        }
+
+        .start-game-wrapper-scroll > * {
+            flex: 0 0 auto;
+        }
 }
+
+@media screen and (min-width: 768px) {
+    .start-game-wrapper {
+        margin-top: 130px; /* atur sesuai kebutuhanmu */
+    }
+}
+
 
 #start-game-btn,
 #myx,
-#asteroid-game, #adm-smt {
+#asteroid-game, #adm-smt, #green-red {
     padding: 12px 24px;
     font-size: 1.2rem;
     cursor: pointer;
@@ -178,7 +228,7 @@ body {
     /* Hover effect (optional) */
     #start-game-btn:hover,
     #myx:hover,
-    #asteroid-game:hover, #adm-smt:hover {
+    #asteroid-game:hover, #adm-smt:hover, #green-red:hover {
         transform: scale(1.05);
         box-shadow: 0 0 10px rgba(152, 172, 244, 0.6), 0 0 20px rgba(152, 172, 244, 0.8);
     }
@@ -234,6 +284,12 @@ body {
     color: #333;
 }
 
+.green-label {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
     #start-game-btn:hover {
         border-color: #bdc3c7;
     }
@@ -249,6 +305,11 @@ body {
 #adm-smt:hover {
     border-color: #bdc3c7;
 }
+
+#green-red:hover {
+    border-color: #bdc3c7;
+}
+
 
 
 /* Buat class .hidden untuk menyembunyikan elemen */

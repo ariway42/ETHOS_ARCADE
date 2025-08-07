@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ETH OS Red Light, Green Light</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="squid.css">
+</head>
+<body>
+    <br />
+    <h1>🦑 ETH OS Red Light, Green Light</h1>
+    <br />
+    <div id="message" class="message"></div>
+    <div class="game">
+        <div class="track" tabindex="0">
+            <!-- Tambahkan di dalam <div class="track">, tapi sebelum doll -->
+            <img class="tree left-tree" src="img/tree.png" alt="Tree">
+            <img class="tree left1-tree" src="img/bush.png" alt="bush">
+            <img class="tree left2-tree" src="img/tree.png" alt="Tree">
+            <img class="tree right-tree" src="img/bush.png" alt="bush">
+            <img class="tree left4-tree" src="img/tree.png" alt="Tree">
+
+            <img id="doll" class="doll" src="img/dollback.png" alt="Doll">
+
+            <!-- Pemain -->
+            <img id="user" class="character user" src="img/plyer.png" alt="Player">
+
+            <!-- Bot -->
+            <img id="bot1" class="character bot" src="img/bot1.png" alt="Bot">
+            <img id="bot2" class="character bot" src="img/bot2.png" alt="Bot">
+            <img id="bot3" class="character bot" src="img/bot3.png" alt="Bot">
+            <img id="bot4" class="character bot" src="img/bot4.png" alt="Bot">
+            <img id="bot5" class="character bot" src="img/bot5.png" alt="Bot">
+            <img id="bot6" class="character bot" src="img/bot6.png" alt="Bot">
+            <img id="bot7" class="character bot" src="img/bot7.png" alt="Bot">
+            <img id="bot8" class="character bot" src="img/bot8.png" alt="Bot">
+            <img id="bot9" class="character bot" src="img/bot9.png" alt="Bot">
+            <img id="bot10" class="character bot" src="img/bot10.png" alt="Bot">
+            <img id="bot11" class="character bot" src="img/bot11.png" alt="Bot">
+            <img id="bot12" class="character bot" src="img/bot12.png" alt="Bot">
+            <img id="bot13" class="character bot" src="img/bot13.png" alt="Bot">
+            <img id="bot14" class="character bot" src="img/bot14.png" alt="Bot">
+            <img id="bot15" class="character bot" src="img/bot15.png" alt="Bot">
+            <img id="bot16" class="character bot" src="img/bot16.png" alt="Bot">
+            <img id="bot17" class="character bot" src="img/bot17.png" alt="Bot">
+
+            <div id="finishBox" style="display: none; background: white; color: black; padding: 30px; border-radius: 10px; font-size: 22px; width: 300px; margin: 50px auto; text-align: center;">
+                🎉 The Game is Done!<br>congratulations to all players.
+                <br><br>
+                <button onclick="restartGame()" style="padding: 10px 20px; margin-right: 10px;">Play Again</button>
+                <button onclick="goHome()" style="padding: 10px 20px;">Home</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Controls untuk handphone -->
+    <div class="mobile-controls">
+        <button onclick="simulateKey('ArrowUp')">⬆️</button>
+        <div>
+            <button onclick="simulateKey('ArrowLeft')">⬅️</button>
+            <button onclick="simulateKey('ArrowDown')">⬇️</button>
+            <button onclick="simulateKey('ArrowRight')">➡️</button>
+        </div>
+    </div>
+
+
+    <script src="squid.js"></script>
+
+    <script>
+        function simulateKey(key) {
+            keys[key] = true;
+            setTimeout(() => {
+                keys[key] = false;
+            }, 100); // seperti user menekan dan melepas
+        }
+    </script>
+
+</body>
+</html>

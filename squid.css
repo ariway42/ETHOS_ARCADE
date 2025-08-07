@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #98acf4;
+    color: white;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.game {
+    width: 35%;
+    height: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.track {
+    width: 100%;
+    height: 95%;
+    background: linear-gradient(to right, #44bd32 10%, #8B4513 10% 90%, #44bd32 90%);
+    position: relative;
+    overflow: hidden;
+    border: 0px solid #fff;
+    border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .track {
+        height: 900px; /* track lebih panjang di HP */
+        background: linear-gradient(to right, #44bd32 15%, #8B4513 15% 85%, #44bd32 85%);
+    }
+
+    .tree.left-tree,
+    .tree.right-tree {
+        height: 80px;
+    }
+}
+.tree {
+    position: absolute;
+    width: 100px;
+    z-index: 1;
+    top: 50px;
+}
+
+.left-tree {
+    left: -20px; /* Geser dikit keluar jalur kiri */
+}
+
+.left1-tree {
+    left: -40px;
+    padding-top : 220px;
+}
+
+.left4-tree {
+    right: -30px;
+    padding-top: 430px;
+}
+
+
+.left2-tree {
+    left: -10px;
+    padding-top: 450px;
+}
+
+.right-tree {
+    right: -20px; /* Geser dikit keluar jalur kanan */
+}
+
+
+.character {
+    width: 40px;
+    position: absolute;
+    bottom: 20px;
+}
+
+.user {
+    left: 280px;
+    width: 70px;
+    filter: drop-shadow(0 0 8px white);
+}
+
+.bot {
+    bottom: 20px;
+}
+
+#bot1 {
+    left: 100px;
+}
+
+#bot2 {
+    left: 180px;
+}
+
+#bot3 {
+    left: 240px;
+}
+
+#bot4 {
+    left: 400px;
+}
+
+#bot5 {
+    left: 420px;
+}
+
+#bot6 {
+    left: 580px;
+}
+
+#bot7 {
+    left: 650px;
+}
+
+#bot8 {
+    left: 720px;
+}
+
+#bot9 {
+    left: 780px;
+}
+
+#bot10 {
+    left: 830px;
+}
+
+
+#bot11 {
+    left: 890px;
+}
+
+#bot12 {
+    left: 950px;
+}
+
+#bot13 {
+    left: 1000px;
+}
+
+#bot14 {
+    left: 1060px;
+}
+
+#bot15 {
+    left: 1130px;
+}
+
+#bot16 {
+    left: 1190px;
+}
+
+#bot17 {
+    left: 1270px;
+}
+
+
+.doll {
+    width: 60px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.message {
+    font-size: 24px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    height: 30px;
+}
+
+.mobile-controls {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 1000;
+    pointer-events: auto;
+}
+
+    .mobile-controls button {
+        background: transparent; /* Transparan */
+        border: none; /* Tidak ada border */
+        outline: none; /* Hilangkan outline saat diklik */
+        font-size: 32px; /* Ukuran icon */
+        padding: 8px;
+        margin: 4px;
+        color: white; /* Warna icon, ubah jika perlu */
+        cursor: pointer;
+        transition: transform 0.1s ease;
+        opacity: 0.4; /* agar sedikit transparan */
+    }
+
+        .mobile-controls button:active {
+            transform: scale(0.9); /* Efek kecil saat ditekan */
+        }
+
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: block;
+    }
+}
+
+/* Responsive layout for mobile devices */
+@media (max-width: 768px) {
+    .game {
+        width: 95%;
+        height: auto;
+    }
+
+    .track {
+        height: 500px;
+        background: linear-gradient(to right, #44bd32 15%, #8B4513 15% 85%, #44bd32 85%);
+    }
+
+    .tree {
+        width: 60px;
+    }
+
+    .character {
+        width: 30px;
+    }
+
+    .user {
+        left: 45%;
+    }
+
+    @media (max-width: 768px) {
+        .user {
+            width: 50px; /* atau sesuaikan 60px, dst sesuai keinginan */
+            left: 45%;
+        }
+    }
+
+   
+    .doll {
+        width: 40px;
+    }
+
+    .message {
+        font-size: 18px;
+    }
+
+    #finishBox {
+        width: 90%;
+        font-size: 18px;
+    }
+}

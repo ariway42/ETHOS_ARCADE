@@ -18,38 +18,46 @@
         <div class="text">Welcome to Ethereum OS <br /> "Arcade Game"</div>
     </div>
 
-    <div class="start-game-wrapper">
-        <div class="button-group">
-            <button id="start-game-btn">
-                <i class="fas fa-car"></i>
-            </button>
-            <div id="gamelabel" class="start-game-label">Car Game</div>
+    <div class="start-game-wrapper-scroll">
+        <div class="start-game-wrapper">
+            <div class="button-group">
+                <button id="start-game-btn">
+                    <i class="fas fa-car"></i>
+                </button>
+                <div id="gamelabel" class="start-game-label">Car Game</div>
+            </div>
+
+
+            <div class="button-group">
+                <button id="myx">
+                    <i class="fas fa-x"></i>
+                </button>
+                <div id="xlabel" class="myx-label">My X</div>
+            </div>
+
+            <div class="button-group">
+                <button id="asteroid-game">
+                    <i class="fas fa-plane"></i>
+                </button>
+                <div id="asteroidlabel" class="asteroid-label">Asteroid</div>
+            </div>
+
+            <div class="button-group">
+                <button id="adm-smt">
+                    <i class="fas fa-user"></i>
+                </button>
+                <div id="smtlabel" class="smt-label" style="text-align:center;">OS Simulator</div>
+            </div>
+
+            <div class="button-group">
+                <button id="green-red">
+                    <i class="fas fa-traffic-light"></i>
+                </button>
+                <div id="greenlabel" class="green-label" style="text-align:center;">Green Red</div>
+            </div>
+
         </div>
-
-
-        <div class="button-group">
-            <button id="myx">
-                <i class="fas fa-x"></i>
-            </button>
-            <div id="xlabel" class="myx-label">My X</div>
-        </div>
-
-        <div class="button-group">
-            <button id="asteroid-game">
-                <i class="fas fa-plane"></i>
-            </button>
-            <div id="asteroidlabel" class="asteroid-label">Asteroid</div>
-        </div>
-
-        <div class="button-group">
-            <button id="adm-smt">
-                <i class="fas fa-user"></i>
-            </button>
-            <div id="smtlabel" class="smt-label" style="text-align:center;">OS Simulator</div>
-        </div>
-
     </div>
-
 
 
     <!-- Game -->
@@ -98,6 +106,12 @@
     </script>
 
     <script>
+        document.getElementById("green-red").addEventListener("click", () => {
+            window.location.href = "squid.html";
+        });
+    </script>
+
+    <script>
         const startBtn = document.getElementById("start-game-btn");
         startBtn.addEventListener("click", () => {
             startBtn.style.display = "none";
@@ -109,6 +123,8 @@
             document.getElementById("asteroid-game").style.display = "none";
             document.getElementById("smtlabel").style.display = "none";
             document.getElementById("adm-smt").style.display = "none";
+            document.getElementById("greenlabel").style.display = "none";
+            document.getElementById("green-red").style.display = "none";
             document.getElementById("game").classList.remove("hidden");
             document.getElementById("controller").classList.remove("hidden");
         });

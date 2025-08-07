@@ -356,6 +356,8 @@ homeBtn.addEventListener("click", () => {
     document.getElementById("asteroid-game").style.display = "block";
     document.getElementById("smtlabel").style.display = "block";
     document.getElementById("adm-smt").style.display = "block";
+    document.getElementById("greenlabel").style.display = "block";
+    document.getElementById("green-red").style.display = "block";
     bgMusic.pause();
 });
 // Jangan panggil startGame otomatis saat page load
