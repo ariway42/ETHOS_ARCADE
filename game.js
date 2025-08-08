@@ -254,6 +254,7 @@ function spawnEthosDecoration() {
 }
 
 function startGame() {
+    document.getElementById("controller").style.display = "block";
     score = 0;
     isGameOver = false;
     playerPositionX = 2;
@@ -358,6 +359,9 @@ homeBtn.addEventListener("click", () => {
     document.getElementById("adm-smt").style.display = "block";
     document.getElementById("greenlabel").style.display = "block";
     document.getElementById("green-red").style.display = "block";
+    document.getElementById("taplabel").style.display = "block";
+    document.getElementById("tap-game").style.display = "block";
+    document.getElementById("controller").style.display = "none";
     bgMusic.pause();
 });
 // Jangan panggil startGame otomatis saat page load

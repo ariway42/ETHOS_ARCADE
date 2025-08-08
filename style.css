@@ -211,7 +211,7 @@ body {
 
 #start-game-btn,
 #myx,
-#asteroid-game, #adm-smt, #green-red {
+#asteroid-game, #adm-smt, #green-red, #tap-game {
     padding: 12px 24px;
     font-size: 1.2rem;
     cursor: pointer;
@@ -228,7 +228,7 @@ body {
     /* Hover effect (optional) */
     #start-game-btn:hover,
     #myx:hover,
-    #asteroid-game:hover, #adm-smt:hover, #green-red:hover {
+    #asteroid-game:hover, #adm-smt:hover, #green-red:hover, #tap-game:hover {
         transform: scale(1.05);
         box-shadow: 0 0 10px rgba(152, 172, 244, 0.6), 0 0 20px rgba(152, 172, 244, 0.8);
     }
@@ -290,6 +290,12 @@ body {
     color: #333;
 }
 
+.tap-label {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
     #start-game-btn:hover {
         border-color: #bdc3c7;
     }
@@ -310,6 +316,9 @@ body {
     border-color: #bdc3c7;
 }
 
+#tap-label:hover {
+    border-color: #bdc3c7;
+}
 
 
 /* Buat class .hidden untuk menyembunyikan elemen */

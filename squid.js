@@ -12,7 +12,7 @@ let gameOver = false;
 let keys = {};
 let finishPopupShown = false;
 
-// Posisi awal
+
 let userY = 10;
 let userX = 320;
 
@@ -21,7 +21,7 @@ let userDead = false;
 
 let botPositions = bots.map((bot, i) => {
     const y = 0;
-    const x = (i % 6) * 90 + Math.random() * 20; // posisi menyebar tiap 90px
+    const x = (i % 6) * 90 + Math.random() * 20;
 
     return {
         y,
@@ -41,7 +41,7 @@ let botPositions = bots.map((bot, i) => {
 function startRandomDollLoop() {
     function toggle() {
         if (finishPopupShown) {
-            // Paksa doll tetap menghadap depan saat game benar-benar selesai
+           
             doll.src = "img/dollfront.png";
             doll.style.width = "100px";
             return;
@@ -84,7 +84,7 @@ function updateUser() {
         message.textContent = "❌ You moving! GAME OVER";
         userDead = true;
 
-        // Tambahan biar bot tetap jalan walau user mati
+      
         user.style.opacity = 0.3;
         user.style.filter = "grayscale(100%)";
         return;
@@ -116,7 +116,7 @@ function updateBots() {
 
         const prevY = pos.y;
 
-        // Waktu ambil keputusan baru
+   
         if (pos.decisionDelay <= 0) {
             const recklessChance = safe ? 0.95 : pos.recklessLevel;
             pos.shouldMove = Math.random() < recklessChance;
@@ -125,7 +125,7 @@ function updateBots() {
             pos.decisionDelay--;
         }
 
-        // Kalau saat ini boleh jalan (lampu hijau atau nekat)
+
         //if (pos.shouldMove && (safe || Math.random() < pos.recklessLevel)) {
         //    const dy = pos.speed;
         //    const dx = (Math.random() - 0.5) * 0.5;
@@ -154,10 +154,10 @@ function updateBots() {
                 }
             }
 
-            pos.x = Math.max(0, Math.min(560, pos.x)); // biar ga keluar game
+            pos.x = Math.max(0, Math.min(560, pos.x)); 
         }
 
-        // ❌ Mati kalo nekat saat merah
+
         if (!safe) {
             const deltaY = pos.y - prevY;
             if (deltaY > 0.6 && Math.random() < 0.5) {
@@ -169,12 +169,12 @@ function updateBots() {
             }
         }
 
-        // Menang
+
         if (pos.y >= 660) {
             bots[i].style.border = "2px solid gold";
         }
 
-        // Apply posisi
+
         bots[i].style.bottom = `${pos.y}px`;
         bots[i].style.left = `${pos.x}px`;
     });
@@ -189,11 +189,11 @@ function checkGameFinish() {
     if (allBotsFinished && (userMenang || userDead)) {
         finishPopupShown = true;
 
-        // Paksa doll berhenti dan tampil depan
+
         doll.src = "img/dollfront.png";
         doll.style.width = "100px";
 
-        // Tampilkan kotak finish
+
         document.getElementById("finishBox").style.display = "block";
 
         bgms.pause();
@@ -202,11 +202,11 @@ function checkGameFinish() {
 
 
 function restartGame() {
-    location.reload(); // reset game
+    location.reload();
 }
 
 function goHome() {
-    window.location.href = "index.html"; // ganti ke halaman home kamu
+    window.location.href = "index.html"; 
 }
 
 

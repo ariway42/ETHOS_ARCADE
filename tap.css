@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    background-color: #1e272e;
+    color: #0fbcf9;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+#binary-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.binary {
+    position: absolute;
+    top: -20px;
+    color: #3c40c6;
+    font-family: monospace;
+    font-size: 14px;
+    opacity: 0.2;
+    animation: fallDown linear forwards;
+    text-shadow: 0 0 5px #00ff00;
+}
+
+@keyframes fallDown {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+.glow-text {
+    color: #0fbcf9;
+    animation: glowPulse 4s infinite ease-in-out;
+}
+
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 2px #3c40c6, 0 0 4px #3c40c6, 0 0 6px #3c40c6, 0 0 8px #3c40c6;
+        opacity: 0.4;
+    }
+
+    50% {
+        text-shadow: 0 0 6px #3c40c6, 0 0 12px #3c40c6, 0 0 24px #3c40c6, 0 0 48px #3c40c6;
+        opacity: 1;
+    }
+
+    100% {
+        text-shadow: 0 0 2px #3c40c6, 0 0 4px #3c40c6, 0 0 6px #3c40c6, 0 0 8px #3c40c6;
+        opacity: 0.4;
+    }
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.ascii-art {
+    font-size: 10px; /* default untuk PC */
+    white-space: pre;
+    text-shadow: 0 0 8px #3c40c6, 0 0 12px #3c40c6; /* ini glow hitam */
+}
+
+.glitch {
+    text-shadow: 2px 0 red, -2px 0 blue, 0 2px green;
+    transform: translate(1px, -1px) skew(0.5deg, 0.5deg);
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}

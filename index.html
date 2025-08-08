@@ -56,6 +56,12 @@
                 <div id="greenlabel" class="green-label" style="text-align:center;">Green Red</div>
             </div>
 
+            <div class="button-group">
+                <button id="tap-game">
+                    <i class="fas fa-hand-pointer"></i>
+                </button>
+                <div id="taplabel" class="tap-label" style="text-align:center;">TAP Me</div>
+            </div>
         </div>
     </div>
 
@@ -77,7 +83,7 @@
         </div>
     </div>
 
-    <div id="controller">
+    <div id="controller" style="display:none;">
         <div class="arrow up" data-dir="up"></div>
         <div class="arrow down" data-dir="down"></div>
         <div class="arrow left" data-dir="left"></div>
@@ -112,6 +118,12 @@
     </script>
 
     <script>
+        document.getElementById("tap-game").addEventListener("click", () => {
+            window.location.href = "tap.html";
+        });
+    </script>
+
+    <script>
         const startBtn = document.getElementById("start-game-btn");
         startBtn.addEventListener("click", () => {
             startBtn.style.display = "none";
@@ -125,6 +137,8 @@
             document.getElementById("adm-smt").style.display = "none";
             document.getElementById("greenlabel").style.display = "none";
             document.getElementById("green-red").style.display = "none";
+            document.getElementById("tap-game").style.display = "none";
+            document.getElementById("taplabel").style.display = "none";
             document.getElementById("game").classList.remove("hidden");
             document.getElementById("controller").classList.remove("hidden");
         });
